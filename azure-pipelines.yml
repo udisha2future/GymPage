@@ -39,6 +39,6 @@ steps:
     containerRegistry: 'dock1'
     repository: 'udisha2future/dock-test1'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: '**/dockerfile1'
 
 
