@@ -19,11 +19,11 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    Contents: './css'
+    Contents: 'css/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: CopyFiles@2
   inputs:
-    Contents: '*/gymschedule.html'
+    Contents: 'gymschedule.html'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
