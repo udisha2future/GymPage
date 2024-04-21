@@ -30,4 +30,15 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'build1'
     publishLocation: 'Container'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    repository: 'udisha2future/dock-test1'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
 
