@@ -1,4 +1,4 @@
-FROM nginx:latest as build1
+FROM nginx:latest
 
 #RUN mkdir /data
 #WORKDIR /data
