@@ -19,11 +19,26 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CopyFiles@2
   inputs:
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)' 
+    Contents: 'css/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'gymschedule.html'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: 'build1'
     publishLocation: 'Container'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock1'
+    repository: 'udisha2future/dock-test1'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
+
 
